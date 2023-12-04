@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 nothing = "0.1.12"
-wasmtime = "15.0.1"
+wasmtime = { version = "8.0.1", features = ["cache","cranelift","jitdump","parallel-compilation","pooling-allocator"] }

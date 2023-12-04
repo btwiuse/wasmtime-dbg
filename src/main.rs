@@ -49,6 +49,9 @@ fn main() -> Result<(), Error> {
         .cranelift_opt_level(OptLevel::SpeedAndSize)
         .cranelift_nan_canonicalization(false);
 
+    #[allow(deprecated)]
+    config.cranelift_use_egraphs(false);
+
     /* unsafe { config.cranelift_flag_set("use_egraphs", "false") } */
 
     // .target("None")?;
