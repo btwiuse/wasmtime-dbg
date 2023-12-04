@@ -32,6 +32,7 @@ fn main() -> Result<(), Error> {
      */
     let mut config = Config::new();
 
+    #[allow(deprecated)]
     config
         .debug_info(false)
         .wasm_backtrace_details(WasmBacktraceDetails::Disable)
@@ -45,12 +46,10 @@ fn main() -> Result<(), Error> {
         .static_memory_guard_size(2147483648)
         .dynamic_memory_guard_size(65536)
         .guard_before_linear_memory(true)
+        .cranelift_nan_canonicalization(false)
+        .cranelift_use_egraphs(false)
         .strategy(Strategy::Auto)
-        .cranelift_opt_level(OptLevel::SpeedAndSize)
-        .cranelift_nan_canonicalization(false);
-
-    #[allow(deprecated)]
-    config.cranelift_use_egraphs(false);
+        .cranelift_opt_level(OptLevel::SpeedAndSize);
 
     /* unsafe { config.cranelift_flag_set("use_egraphs", "false") } */
 
