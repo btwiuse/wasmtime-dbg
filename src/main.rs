@@ -1,8 +1,12 @@
 use nothing::Probably;
-use wasmtime::{Config, Engine, Error, OptLevel, Strategy, WasmBacktraceDetails};
+use wasmtime::{
+    Config, Engine, Error, OptLevel, PoolingAllocationConfig, Strategy, WasmBacktraceDetails,
+};
 
 fn main() -> Result<(), Error> {
     let mut config = Config::new();
+
+    dbg!(&config);
 
     config
         .debug_info(false)
@@ -21,27 +25,34 @@ fn main() -> Result<(), Error> {
         .strategy(Strategy::Auto)
         .cranelift_opt_level(OptLevel::SpeedAndSize);
 
-    // .target("None")?;
-    // .cranelift_flag_set()
-    /*
-
-    .compiler_config(CompilerConfig {
-        strategy: CompilerStrategy::Auto,
-        target: None,
-        settings: {
-            "use_egraphs": "false",
-            "opt_level": "speed_and_size",
-            "enable_verifier": "false",
-            "enable_nan_canonicalization": "false",
-        },
-        flags: {},
-        cache_store: None,
-    });
-     */
-
     dbg!(&config);
+
     let engine = Engine::new(&config)?;
-    // dbg!(&engine);
+
+    let mut pooling_config = PoolingAllocationConfig::default();
+
+    dbg!(&pooling_config);
+
+    const MAX_WASM_PAGES: u64 = 0x10000;
+    const WASM_PAGE_SIZE: u64 = 65536;
+
+    let memory_pages = MAX_WASM_PAGES;
+
+    pooling_config
+      .max_unused_warm_slots(4)
+      .total_core_instances(64)
+      .total_memories(64)
+      .max_memories_per_module(1)
+      .total_tables(64)
+      .max_tables_per_module(1)
+      .max_component_instance_size(128*1024)
+      .table_elements(8192)
+      .memory_pages(memory_pages)
+      .max_memories_per_component(65536)
+      .max_core_instances_per_component(65536)
+      .max_tables_per_component(65536);
+
+    dbg!(&pooling_config);
+
     Ok(())
-    // println!("Hello, world!").into()
 }
