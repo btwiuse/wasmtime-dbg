@@ -1,6 +1,6 @@
 use nothing::Probably;
 use wasmtime::{
-    Config, Engine, Error, OptLevel, PoolingAllocationConfig, Strategy, WasmBacktraceDetails,
+    Config, Engine, Error, OptLevel, PoolingAllocationConfig, Strategy, WasmBacktraceDetails, InstanceAllocationStrategy
 };
 
 fn main() -> Result<(), Error> {
@@ -27,8 +27,6 @@ fn main() -> Result<(), Error> {
 
     dbg!(&config);
 
-    let engine = Engine::new(&config)?;
-
     let mut pooling_config = PoolingAllocationConfig::default();
 
     dbg!(&pooling_config);
@@ -47,12 +45,18 @@ fn main() -> Result<(), Error> {
       .max_tables_per_module(1)
       .max_component_instance_size(128*1024)
       .table_elements(8192)
-      .memory_pages(memory_pages)
-      .max_memories_per_component(65536)
-      .max_core_instances_per_component(65536)
-      .max_tables_per_component(65536);
+      .memory_pages(memory_pages);
+      // .max_memories_per_component(65536)
+      // .max_core_instances_per_component(65536)
+      // .max_tables_per_component(65536);
 
     dbg!(&pooling_config);
+
+    config.allocation_strategy(InstanceAllocationStrategy::Pooling(pooling_config));
+
+    dbg!(&config);
+
+    let engine = Engine::new(&config)?;
 
     Ok(())
 }
