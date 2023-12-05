@@ -1,17 +1,13 @@
-use wasmtime::{Config, Engine, Error, InstanceAllocationStrategy, PoolingAllocationConfig};
+use wasmtime::{Config, Engine, Error, InstanceAllocationStrategy};
 
 fn main() -> Result<(), Error> {
     let mut config = Config::new();
 
-    // dbg!(&config);
+    let _engine_good = Engine::new(dbg!(&config))?;
 
-    let pooling_config = PoolingAllocationConfig::default();
+    config.allocation_strategy(InstanceAllocationStrategy::pooling());
 
-    // dbg!(&pooling_config);
-
-    config.allocation_strategy(InstanceAllocationStrategy::Pooling(pooling_config));
-
-    let _engine = Engine::new(&config)?;
+    let _engine_linux_aarch64_bad = Engine::new(dbg!(&config))?;
 
     Ok(())
 }
