@@ -10,5 +10,4 @@ path = "main.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-# git = "https://github.ufo.k0s.io/bytecodealliance/wasmtime"
-wasmtime = { version = "15", default-features = false, features = ["cache","cranelift","parallel-compilation","pooling-allocator"] }
+wasmtime = "15"
