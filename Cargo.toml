@@ -7,4 +7,5 @@ edition = "2021"
 
 [dependencies]
 nothing = "0.1.12"
-wasmtime = { git = "https://github.com/bytecodealliance/wasmtime", default-features = false, features = ["cache","cranelift","parallel-compilation","pooling-allocator"] }
+# git = "https://github.ufo.k0s.io/bytecodealliance/wasmtime"
+wasmtime = { version = "15", default-features = false, features = ["cache","cranelift","parallel-compilation","pooling-allocator"] }
