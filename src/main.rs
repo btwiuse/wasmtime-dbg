@@ -1,6 +1,7 @@
 use nothing::Probably;
 use wasmtime::{
-    Config, Engine, Error, OptLevel, PoolingAllocationConfig, Strategy, WasmBacktraceDetails, InstanceAllocationStrategy
+    Config, Engine, Error, InstanceAllocationStrategy, OptLevel, PoolingAllocationConfig, Strategy,
+    WasmBacktraceDetails,
 };
 
 fn main() -> Result<(), Error> {
@@ -31,6 +32,7 @@ fn main() -> Result<(), Error> {
 
     dbg!(&pooling_config);
 
+    /*
     const MAX_WASM_PAGES: u64 = 0x10000;
     const WASM_PAGE_SIZE: u64 = 65536;
 
@@ -51,6 +53,7 @@ fn main() -> Result<(), Error> {
       // .max_tables_per_component(65536);
 
     dbg!(&pooling_config);
+    */
 
     config.allocation_strategy(InstanceAllocationStrategy::Pooling(pooling_config));
 
