@@ -9,6 +9,7 @@ fn main() -> Result<(), Error> {
 
     dbg!(&config);
 
+    /*
     config
         .debug_info(false)
         .wasm_backtrace_details(WasmBacktraceDetails::Disable)
@@ -27,6 +28,7 @@ fn main() -> Result<(), Error> {
         .cranelift_opt_level(OptLevel::SpeedAndSize);
 
     dbg!(&config);
+    */
 
     let mut pooling_config = PoolingAllocationConfig::default();
 
