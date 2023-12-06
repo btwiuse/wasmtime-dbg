@@ -2,12 +2,18 @@
 name = "wasmtime-dbg"
 version = "0.1.0"
 edition = "2021"
+default-run = "wasmtime-dbg"
 
 [[bin]]
 name = "wasmtime-dbg"
 path = "main.rs"
 
+[[bin]]
+name = "mmap-rs"
+path = "mmap.rs"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 wasmtime = "15"
+libc = "0.2"
