@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Function to run the mmap-rs program with a given length and check the result
+run_program() {
+    length=$1
+    output=$(./mmap-rs.$(uname -m) $length 2>&1)
+    if [[ $output == *"mmap failed"* ]]; then
+        echo "Length $length: Failed"
+        return 1
+    else
+        echo "Length $length: Success"
+        return 0
+    fi
+}
+
+# Define the search range
+min_length=1
+max_length=6444598427648
+
+# Perform bisect search
+while (( min_length <= max_length )); do
+    mid_length=$(( (min_length + max_length) / 2 ))
+    echo "Testing length: $mid_length"
+
+    run_program $mid_length
+
+    if [[ $? -eq 0 ]]; then
+        min_length=$((mid_length + 1))
+    else
+        max_length=$((mid_length - 1))
+    fi
+done
+
+echo "Failure point: $max_length"

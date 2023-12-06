@@ -17,3 +17,6 @@ path = "mmap.rs"
 [dependencies]
 wasmtime = "15"
 libc = "0.2"
+
+[profile.release]
+strip = true
