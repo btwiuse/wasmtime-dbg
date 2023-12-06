@@ -15,7 +15,11 @@ run_program() {
 
 # Define the search range
 min_length=1
-max_length=6444598427648
+
+# max_length=6444598427648
+
+# 2^62 -1
+max_length=4611686018427387903
 
 # Perform bisect search
 while (( min_length <= max_length )); do
