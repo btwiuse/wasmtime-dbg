@@ -1,0 +1,426 @@
+execve("./wasmtime-linux-aarch64-dbg", ["./wasmtime-linux-aarch64-dbg"], 0x7ff12e3c40 /* 27 vars */) = 0
+mmap(NULL, 1240, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7203824000
+set_tid_address(0x5493f0)               = 25332
+ppoll([{fd=0, events=0}, {fd=1, events=0}, {fd=2, events=0}], 3, {tv_sec=0, tv_nsec=0}, NULL, 8) = 0 (Timeout)
+rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x5050f8}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGSEGV, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RT_1 RT_2], NULL, 8) = 0
+rt_sigaction(SIGSEGV, {sa_handler=0x4d5cd4, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x5050f8}, NULL, 8) = 0
+rt_sigaction(SIGBUS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGBUS, {sa_handler=0x4d5cd4, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x5050f8}, NULL, 8) = 0
+sigaltstack(NULL, {ss_sp=NULL, ss_flags=SS_DISABLE, ss_size=0}) = 0
+mmap(NULL, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7203820000
+mprotect(0x7203820000, 4096, PROT_NONE) = 0
+sigaltstack({ss_sp=0x7203821000, ss_flags=0, ss_size=12288}, NULL) = 0
+brk(NULL)                               = 0x54c000
+brk(0x54e000)                           = 0x54e000
+mmap(0x54c000, 4096, PROT_NONE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x54c000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x720381f000
+rt_sigprocmask(SIG_BLOCK, ~[RTMIN RT_1 RT_2], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+getrandom("\x7f\xf8\x11\x9e\xce\xfa\x97\x84\xde\x64\xba\x88\x95\x12\x58\x15", 16, GRND_INSECURE) = 16
+write(2, "[main.rs:6] &config = ", 22[main.rs:6] &config = )  = 22
+write(2, "Config", 6Config)                   = 6
+write(2, " {\n", 3 {
+)                     = 3
+write(2, "    ", 4    )                     = 4
+write(2, "debug_info", 10debug_info)              = 10
+write(2, ": ", 2: )                       = 2
+write(2, "false", 5false)                    = 5
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "parse_wasm_debuginfo", 20parse_wasm_debuginfo)    = 20
+write(2, ": ", 2: )                       = 2
+write(2, "false", 5false)                    = 5
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_threads", 12wasm_threads)            = 12
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_reference_types", 20wasm_reference_types)    = 20
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_function_references", 24wasm_function_references) = 24
+write(2, ": ", 2: )                       = 2
+write(2, "false", 5false)                    = 5
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_bulk_memory", 16wasm_bulk_memory)        = 16
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_simd", 9wasm_simd)                = 9
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_relaxed_simd", 17wasm_relaxed_simd)       = 17
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_multi_value", 16wasm_multi_value)        = 16
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "static_memory_maximum_size", 26static_memory_maximum_size) = 26
+write(2, ": ", 2: )                       = 2
+write(2, "4294967296", 104294967296)              = 10
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "static_memory_guard_size", 24static_memory_guard_size) = 24
+write(2, ": ", 2: )                       = 2
+write(2, "2147483648", 102147483648)              = 10
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "dynamic_memory_guard_size", 25dynamic_memory_guard_size) = 25
+write(2, ": ", 2: )                       = 2
+write(2, "65536", 565536)                    = 5
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "guard_before_linear_memory", 26guard_before_linear_memory) = 26
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "parallel_compilation", 20parallel_compilation)    = 20
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "compiler_config", 15compiler_config)         = 15
+write(2, ": ", 2: )                       = 2
+write(2, "CompilerConfig", 14CompilerConfig)          = 14
+write(2, " {\n", 3 {
+)                     = 3
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "strategy", 8strategy)                 = 8
+write(2, ": ", 2: )                       = 2
+write(2, "Auto", 4Auto)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "target", 6target)                   = 6
+write(2, ": ", 2: )                       = 2
+write(2, "None", 4None)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "settings", 8settings)                 = 8
+write(2, ": ", 2: )                       = 2
+write(2, "{", 1{)                        = 1
+write(2, "\n", 1
+)                       = 1
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "\"", 1")                       = 1
+write(2, "enable_verifier", 15enable_verifier)         = 15
+write(2, "\"", 1")                       = 1
+write(2, ": ", 2: )                       = 2
+write(2, "\"", 1")                       = 1
+write(2, "false", 5false)                    = 5
+write(2, "\"", 1")                       = 1
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "\"", 1")                       = 1
+write(2, "opt_level", 9opt_level)                = 9
+write(2, "\"", 1")                       = 1
+write(2, ": ", 2: )                       = 2
+write(2, "\"", 1")                       = 1
+write(2, "speed", 5speed)                    = 5
+write(2, "\"", 1")                       = 1
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "}", 1})                        = 1
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "flags", 5flags)                    = 5
+write(2, ": ", 2: )                       = 2
+write(2, "{", 1{)                        = 1
+write(2, "}", 1})                        = 1
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "cache_store", 11cache_store)             = 11
+write(2, ": ", 2: )                       = 2
+write(2, "None", 4None)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "clif_dir", 8clif_dir)                 = 8
+write(2, ": ", 2: )                       = 2
+write(2, "None", 4None)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "wmemcheck", 9wmemcheck)                = 9
+write(2, ": ", 2: )                       = 2
+write(2, "false", 5false)                    = 5
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "}", 1})                        = 1
+write(2, ",\n", 2,
+)                      = 2
+write(2, "}", 1})                        = 1
+write(2, "\n", 1
+)                       = 1
+rt_sigaction(SIGSEGV, {sa_handler=0x483070, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_NODEFER|SA_SIGINFO, sa_restorer=0x5050f8}, {sa_handler=0x4d5cd4, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x5050f8}, 8) = 0
+rt_sigaction(SIGILL, {sa_handler=0x483070, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_NODEFER|SA_SIGINFO, sa_restorer=0x5050f8}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+openat(AT_FDCWD, "/proc/self/auxv", O_RDONLY|O_LARGEFILE) = 3
+mmap(NULL, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x720381b000
+read(3, "\1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0003\0\0\0\0\0\0\0p\22\0\0\0\0\0\0"..., 4096) = 336
+mmap(NULL, 28672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7203814000
+munmap(0x720381b000, 16384)             = 0
+read(3, "", 7856)                       = 0
+close(3)                                = 0
+munmap(0x7203814000, 28672)             = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x720381e000
+write(2, "[main.rs:10] &config = ", 23[main.rs:10] &config = ) = 23
+write(2, "Config", 6Config)                   = 6
+write(2, " {\n", 3 {
+)                     = 3
+write(2, "    ", 4    )                     = 4
+write(2, "debug_info", 10debug_info)              = 10
+write(2, ": ", 2: )                       = 2
+write(2, "false", 5false)                    = 5
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "parse_wasm_debuginfo", 20parse_wasm_debuginfo)    = 20
+write(2, ": ", 2: )                       = 2
+write(2, "false", 5false)                    = 5
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_threads", 12wasm_threads)            = 12
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_reference_types", 20wasm_reference_types)    = 20
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_function_references", 24wasm_function_references) = 24
+write(2, ": ", 2: )                       = 2
+write(2, "false", 5false)                    = 5
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_bulk_memory", 16wasm_bulk_memory)        = 16
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_simd", 9wasm_simd)                = 9
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_relaxed_simd", 17wasm_relaxed_simd)       = 17
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "wasm_multi_value", 16wasm_multi_value)        = 16
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "static_memory_maximum_size", 26static_memory_maximum_size) = 26
+write(2, ": ", 2: )                       = 2
+write(2, "4294967296", 104294967296)              = 10
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "static_memory_guard_size", 24static_memory_guard_size) = 24
+write(2, ": ", 2: )                       = 2
+write(2, "2147483648", 102147483648)              = 10
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "dynamic_memory_guard_size", 25dynamic_memory_guard_size) = 25
+write(2, ": ", 2: )                       = 2
+write(2, "65536", 565536)                    = 5
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "guard_before_linear_memory", 26guard_before_linear_memory) = 26
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "parallel_compilation", 20parallel_compilation)    = 20
+write(2, ": ", 2: )                       = 2
+write(2, "true", 4true)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "compiler_config", 15compiler_config)         = 15
+write(2, ": ", 2: )                       = 2
+write(2, "CompilerConfig", 14CompilerConfig)          = 14
+write(2, " {\n", 3 {
+)                     = 3
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "strategy", 8strategy)                 = 8
+write(2, ": ", 2: )                       = 2
+write(2, "Auto", 4Auto)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "target", 6target)                   = 6
+write(2, ": ", 2: )                       = 2
+write(2, "None", 4None)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "settings", 8settings)                 = 8
+write(2, ": ", 2: )                       = 2
+write(2, "{", 1{)                        = 1
+write(2, "\n", 1
+)                       = 1
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "\"", 1")                       = 1
+write(2, "enable_verifier", 15enable_verifier)         = 15
+write(2, "\"", 1")                       = 1
+write(2, ": ", 2: )                       = 2
+write(2, "\"", 1")                       = 1
+write(2, "false", 5false)                    = 5
+write(2, "\"", 1")                       = 1
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "\"", 1")                       = 1
+write(2, "opt_level", 9opt_level)                = 9
+write(2, "\"", 1")                       = 1
+write(2, ": ", 2: )                       = 2
+write(2, "\"", 1")                       = 1
+write(2, "speed", 5speed)                    = 5
+write(2, "\"", 1")                       = 1
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "}", 1})                        = 1
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "flags", 5flags)                    = 5
+write(2, ": ", 2: )                       = 2
+write(2, "{", 1{)                        = 1
+write(2, "}", 1})                        = 1
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "cache_store", 11cache_store)             = 11
+write(2, ": ", 2: )                       = 2
+write(2, "None", 4None)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "clif_dir", 8clif_dir)                 = 8
+write(2, ": ", 2: )                       = 2
+write(2, "None", 4None)                     = 4
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "    ", 4    )                     = 4
+write(2, "wmemcheck", 9wmemcheck)                = 9
+write(2, ": ", 2: )                       = 2
+write(2, "false", 5false)                    = 5
+write(2, ",\n", 2,
+)                      = 2
+write(2, "    ", 4    )                     = 4
+write(2, "}", 1})                        = 1
+write(2, ",\n", 2,
+)                      = 2
+write(2, "}", 1})                        = 1
+write(2, "\n", 1
+)                       = 1
+mmap(NULL, 6444598427648, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = -1 ENOMEM (Out of memory)
+munmap(0x720381e000, 4096)              = 0
+write(2, "Error: ", 7Error: )                  = 7
+write(2, "failed to create memory pool map"..., 36failed to create memory pool mapping) = 36
+write(2, "\n\nCaused by:", 12
+
+Caused by:)          = 12
+write(2, "\n", 1
+)                       = 1
+write(2, " ", 1 )                        = 1
+write(2, " ", 1 )                        = 1
+write(2, " ", 1 )                        = 1
+write(2, " ", 1 )                        = 1
+write(2, "0", 10)                        = 1
+write(2, ": ", 2: )                       = 2
+write(2, "mmap failed to reserve 0x5dc8000"..., 42mmap failed to reserve 0x5dc80000000 bytes) = 42
+write(2, "\n", 1
+)                       = 1
+write(2, " ", 1 )                        = 1
+write(2, " ", 1 )                        = 1
+write(2, " ", 1 )                        = 1
+write(2, " ", 1 )                        = 1
+write(2, "1", 11)                        = 1
+write(2, ": ", 2: )                       = 2
+write(2, "Out of memory", 13Out of memory)           = 13
+write(2, " (os error ", 11 (os error )             = 11
+write(2, "12", 212)                       = 2
+write(2, ")", 1))                        = 1
+write(2, "\n", 1
+)                       = 1
+sigaltstack({ss_sp=NULL, ss_flags=SS_DISABLE, ss_size=12288}, NULL) = 0
+munmap(0x7203820000, 16384)             = 0
+exit_group(1)                           = ?
++++ exited with 1 +++

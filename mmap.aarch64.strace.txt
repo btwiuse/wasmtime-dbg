@@ -1,0 +1,11 @@
+execve("./mmap.aarch64", ["./mmap.aarch64"], 0x7fcfb560f0 /* 27 vars */) = 0
+set_tid_address(0x235dd8)               = 25438
+mmap(NULL, 6444598427648, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = -1 ENOMEM (Out of memory)
+writev(2, [{iov_base="", iov_len=0}, {iov_base="mmap failed", iov_len=11}], 2mmap failed) = 11
+writev(2, [{iov_base="", iov_len=0}, {iov_base=":", iov_len=1}], 2:) = 1
+writev(2, [{iov_base="", iov_len=0}, {iov_base=" ", iov_len=1}], 2 ) = 1
+writev(2, [{iov_base="", iov_len=0}, {iov_base="Out of memory", iov_len=13}], 2Out of memory) = 13
+writev(2, [{iov_base="", iov_len=0}, {iov_base="\n", iov_len=1}], 2
+) = 1
+exit_group(1)                           = ?
++++ exited with 1 +++
